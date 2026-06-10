@@ -1,0 +1,2 @@
+Coloca aquí los logos PNG originales de Wasi Pet.
+Luego impórtalos en src/components/ui/Logo.tsx.

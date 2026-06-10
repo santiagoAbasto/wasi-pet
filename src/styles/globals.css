@@ -1,0 +1,202 @@
+@import "tailwindcss";
+
+/* ============================================
+   Sistema de diseño Wasi Pet
+   Paleta extraída de los logos oficiales:
+   magenta #dd3a8c (círculo) + púrpura #7a2fbf (anillo) + blanco
+   ============================================ */
+
+@theme {
+  --font-display: "Baloo 2", "Nunito", ui-rounded, system-ui, sans-serif;
+  --font-script: "Pacifico", "Baloo 2", cursive;
+  --font-body: "Nunito", ui-rounded, system-ui, sans-serif;
+
+  --color-primary: #dd3a8c;
+  --color-primary-deep: #b01f6e;
+  --color-secondary: #7a2fbf;
+  --color-secondary-deep: #58219a;
+  --color-accent: #f2a93b;
+  --color-cream: #fff8fb;
+  --color-cream-soft: #fcecf5;
+  --color-ink: #3a1130;
+  --color-muted: #7d5470;
+  --color-line: #f3d6e6;
+  --color-wa: #25d366;
+  --color-wa-deep: #0f8a4d;
+  --color-plum: #2c0b27;
+  --color-plum-soft: #471a40;
+
+  --shadow-soft: 0 18px 40px -18px rgb(221 58 140 / 0.35);
+  --shadow-lift: 0 28px 60px -22px rgb(58 17 48 / 0.3);
+
+  --animate-floaty: floaty 6s ease-in-out infinite;
+  --animate-floaty-slow: floaty 9s ease-in-out infinite;
+  --animate-paw-drift: paw-drift 22s ease-in-out infinite alternate;
+  --animate-wag: wag 1.8s ease-in-out infinite;
+  --animate-marquee: marquee 30s linear infinite;
+
+  @keyframes floaty {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-14px);
+    }
+  }
+  @keyframes paw-drift {
+    0% {
+      opacity: 0.56;
+      transform: translate3d(-10px, 0, 0) rotate(-1deg) scale(1);
+    }
+    50% {
+      opacity: 0.74;
+      transform: translate3d(12px, -14px, 0) rotate(1.5deg) scale(1.02);
+    }
+    100% {
+      opacity: 0.64;
+      transform: translate3d(22px, 6px, 0) rotate(-0.5deg) scale(1.01);
+    }
+  }
+  @keyframes wag {
+    0%,
+    100% {
+      transform: rotate(-6deg);
+    }
+    50% {
+      transform: rotate(8deg);
+    }
+  }
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+/* Variables solicitadas en la especificación del proyecto */
+:root {
+  --color-bg: var(--color-cream);
+  --color-bg-soft: var(--color-cream-soft);
+  --color-text: var(--color-ink);
+  --color-border: var(--color-line);
+  --color-whatsapp: var(--color-wa);
+  --gradient-brand: linear-gradient(120deg, #dd3a8c 0%, #a02ba8 55%, #7a2fbf 100%);
+  --gradient-plum: linear-gradient(160deg, #2c0b27 0%, #471a40 55%, #58219a 130%);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 96px;
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+
+  ::selection {
+    background-color: var(--color-primary);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-secondary);
+    outline-offset: 2px;
+    border-radius: 8px;
+  }
+}
+
+/* Tarjeta de vidrio: solo donde aporta (header, chips flotantes, testimonios) */
+@utility glass {
+  background-color: rgb(255 255 255 / 0.62);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgb(255 255 255 / 0.65);
+}
+
+@utility glass-dark {
+  background-color: rgb(44 11 39 / 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgb(255 255 255 / 0.14);
+}
+
+/* Patrón de patitas para fondos */
+@utility paw-pattern {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(255 248 251 / 0.72),
+    rgb(255 248 251 / 0) 72px,
+    rgb(255 248 251 / 0) calc(100% - 72px),
+    rgb(255 248 251 / 0.72)
+  );
+}
+
+@layer utilities {
+  .paw-pattern::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: -42px;
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='84' height='84' viewBox='0 0 84 84'%3E%3Cg fill='%23dd3a8c' fill-opacity='0.088'%3E%3Cellipse cx='42' cy='48' rx='11' ry='8.5'/%3E%3Ccircle cx='28' cy='35' r='5'/%3E%3Ccircle cx='42' cy='30' r='5.2'/%3E%3Ccircle cx='56' cy='35' r='5'/%3E%3C/g%3E%3C/svg%3E"),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='126' height='126' viewBox='0 0 126 126'%3E%3Cg fill='%237a2fbf' fill-opacity='0.043'%3E%3Cellipse cx='63' cy='72' rx='13' ry='10'/%3E%3Ccircle cx='47' cy='55' r='5.6'/%3E%3Ccircle cx='63' cy='48' r='6'/%3E%3Ccircle cx='79' cy='55' r='5.6'/%3E%3C/g%3E%3C/svg%3E");
+    background-position: 0 0, 34px 26px;
+    background-size: 84px 84px, 126px 126px;
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0 42px,
+      #000 118px,
+      #000 calc(100% - 118px),
+      transparent calc(100% - 42px) 100%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0 42px,
+      #000 118px,
+      #000 calc(100% - 118px),
+      transparent calc(100% - 42px) 100%
+    );
+    animation: var(--animate-paw-drift);
+    will-change: transform, opacity;
+  }
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Burbuja de jabón decorativa */
+@utility bubble {
+  border-radius: 9999px;
+  background:
+    radial-gradient(circle at 30% 28%, rgb(255 255 255 / 0.9) 0%, rgb(255 255 255 / 0.18) 28%, transparent 60%),
+    radial-gradient(circle at 70% 75%, rgb(221 58 140 / 0.18), rgb(122 47 191 / 0.12));
+  border: 1px solid rgb(255 255 255 / 0.55);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  .paw-pattern::before {
+    opacity: 0.6;
+    transform: none;
+  }
+}
