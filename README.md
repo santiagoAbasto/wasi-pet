@@ -16,17 +16,17 @@
 
 <img src="docs/readme/divider.svg" alt="" width="100%">
 
-## 📑 Contenido
+## <img src="docs/readme/ic-indice.svg" width="24" height="24" alt=""> Contenido
 
 [El problema](#-el-problema) · [La solución](#-la-solución) · [Funcionalidades](#-funcionalidades) · [Arquitectura](#-arquitectura) · [Flujos de trabajo](#-flujos-de-trabajo) · [Criterios y decisiones](#-criterios-y-decisiones) · [Stack](#-stack) · [Estructura del repo](#-estructura-del-repo) · [Puesta en marcha](#-puesta-en-marcha) · [Pruebas y calidad](#-pruebas-y-calidad) · [Seguridad](#-seguridad) · [Despliegue](#-despliegue) · [Estado y pendientes](#-estado-y-pendientes) · [Licencia](#-licencia-y-autoría)
 
 <img src="docs/readme/divider.svg" alt="" width="100%">
 
-## 🧩 El problema
+## <img src="docs/readme/ic-problema.svg" width="24" height="24" alt=""> El problema
 
 Quien busca peluquería para su perro llega desde redes sociales y necesita, en pocos segundos, entender qué servicios hay, cómo es la atención y cómo pedir una cita. Sin una página ordenada, la consulta se pierde entre publicaciones y mensajes sueltos.
 
-## 💡 La solución
+## <img src="docs/readme/ic-solucion.svg" width="24" height="24" alt=""> La solución
 
 Wasi Pet es una landing de una sola página para la peluquería canina y el petshop de Cochabamba. Presenta:
 
@@ -39,7 +39,7 @@ La página no registra reservas ni confirma horarios: la cita se cierra en la co
 
 <img src="docs/readme/divider.svg" alt="" width="100%">
 
-## ✨ Funcionalidades
+## <img src="docs/readme/ic-funcionalidades.svg" width="24" height="24" alt=""> Funcionalidades
 
 <details open>
 <summary><b>Oferta y consulta</b></summary>
@@ -68,7 +68,7 @@ La página no registra reservas ni confirma horarios: la cita se cierra en la co
 
 <img src="docs/readme/divider.svg" alt="" width="100%">
 
-## 🏗️ Arquitectura
+## <img src="docs/readme/ic-arquitectura.svg" width="24" height="24" alt=""> Arquitectura
 
 Aplicación de una sola página renderizada en el navegador. Vite genera archivos estáticos; `App.tsx` compone el encabezado, las secciones, el pie y el acceso flotante a WhatsApp. La navegación usa anclas del documento, sin router.
 
@@ -91,7 +91,7 @@ flowchart LR
 
 <img src="docs/readme/divider.svg" alt="" width="100%">
 
-## 🔄 Flujos de trabajo
+## <img src="docs/readme/ic-flujos.svg" width="24" height="24" alt=""> Flujos de trabajo
 
 Desde la visita hasta la consulta:
 
@@ -111,7 +111,7 @@ sequenceDiagram
 
 <img src="docs/readme/divider.svg" alt="" width="100%">
 
-## 🧭 Criterios y decisiones
+## <img src="docs/readme/ic-criterios.svg" width="24" height="24" alt=""> Criterios y decisiones
 
 | Decisión | Por qué |
 |---|---|
@@ -122,7 +122,7 @@ sequenceDiagram
 
 <img src="docs/readme/divider.svg" alt="" width="100%">
 
-## 🧱 Stack
+## <img src="docs/readme/ic-stack.svg" width="24" height="24" alt=""> Stack
 
 | Capa | Tecnología | Versión (`package.json`) |
 |---|---|---|
@@ -136,7 +136,7 @@ sequenceDiagram
 
 <img src="docs/readme/divider.svg" alt="" width="100%">
 
-## 🗂️ Estructura del repo
+## <img src="docs/readme/ic-estructura.svg" width="24" height="24" alt=""> Estructura del repo
 
 ```text
 src/
@@ -154,7 +154,7 @@ DESIGN.md · PRODUCT.md  # intención visual y contexto del producto
 
 <img src="docs/readme/divider.svg" alt="" width="100%">
 
-## 🚀 Puesta en marcha
+## <img src="docs/readme/ic-arranque.svg" width="24" height="24" alt=""> Puesta en marcha
 
 **Requisitos:** Node.js compatible con Vite 7 (`^20.19.0 || >=22.12.0`) y npm. El repositorio no fija versión con `.nvmrc`.
 
@@ -169,7 +169,7 @@ No se requieren variables de entorno, base de datos ni servicios externos para d
 
 <img src="docs/readme/divider.svg" alt="" width="100%">
 
-## 🧪 Pruebas y calidad
+## <img src="docs/readme/ic-pruebas.svg" width="24" height="24" alt=""> Pruebas y calidad
 
 - El repositorio no contiene pruebas automatizadas.
 - La verificación automática disponible es la compilación con chequeo de tipos (`npm run build`). No se ejecutó en esta revisión.
@@ -177,7 +177,7 @@ No se requieren variables de entorno, base de datos ni servicios externos para d
 
 <img src="docs/readme/divider.svg" alt="" width="100%">
 
-## 🔐 Seguridad
+## <img src="docs/readme/ic-seguridad.svg" width="24" height="24" alt=""> Seguridad
 
 - Enlaces externos a WhatsApp, redes y mapas; el mensaje de cada consulta se codifica con `encodeURIComponent`.
 - No hay formularios, ni cuentas, ni datos personales almacenados por la página.
@@ -185,14 +185,14 @@ No se requieren variables de entorno, base de datos ni servicios externos para d
 
 <img src="docs/readme/divider.svg" alt="" width="100%">
 
-## 🚢 Despliegue
+## <img src="docs/readme/ic-despliegue.svg" width="24" height="24" alt=""> Despliegue
 
 - La salida de `npm run build` es estática (`dist/`) y puede servirse desde cualquier alojamiento de archivos.
 - No se documentan proveedor de alojamiento, dominio, Docker ni CI/CD.
 
 <img src="docs/readme/divider.svg" alt="" width="100%">
 
-## 📌 Estado y pendientes
+## <img src="docs/readme/ic-estado.svg" width="24" height="24" alt=""> Estado y pendientes
 
 - **Versión 1.0** (último commit del 2026-06-10: «Version 1.0 - Landing page Wasi Pet»).
 - Pendiente: retirar del `index.html` el script temporal de captura de Figma, según su propio comentario.
@@ -201,7 +201,7 @@ No se requieren variables de entorno, base de datos ni servicios externos para d
 
 <img src="docs/readme/divider.svg" alt="" width="100%">
 
-## 📄 Licencia y autoría
+## <img src="docs/readme/ic-licencia.svg" width="24" height="24" alt=""> Licencia y autoría
 
 Desarrollado por el **Ing. Santiago Abasto**.
 
